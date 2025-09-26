@@ -60,7 +60,7 @@
 import React from 'react'
 import banner1 from '/vector1.png'
 
-const Banner = () => {
+const Banner = ({inProgressCount, resolvedCount}) => {
   return (
     <div className="max-w-6xl mx-auto grid lg:grid-cols-2 sm:grid-cols-1 gap-6">
 
@@ -82,7 +82,7 @@ const Banner = () => {
         {/* Content */}
         <div className="relative z-10 text-center">
           <h2 className="text-xl font-semibold mb-2">In-progress</h2>
-          <p className="text-4xl font-bold">0</p>
+          <p className="text-4xl font-bold">{inProgressCount}</p>
         </div>
       </section>
 
@@ -104,7 +104,7 @@ const Banner = () => {
         {/* Content */}
         <div className="relative z-10 text-center">
           <h2 className="text-xl font-semibold mb-2">Resolved</h2>
-          <p className="text-4xl font-bold">0</p>
+          <p className="text-4xl font-bold">{resolvedCount}</p>
         </div>
       </section>
 

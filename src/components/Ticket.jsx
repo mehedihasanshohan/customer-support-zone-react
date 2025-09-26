@@ -1,7 +1,7 @@
 import React from "react";
 import { LuCalendarDays } from 'react-icons/lu';
 
-const Ticket = ({ ticket }) => {
+const Ticket = ({ ticket, handleProgress }) => {
   const { id, title, description, priority, status, customer, date } = ticket;
 
   // Priority color mapping
@@ -19,7 +19,7 @@ const Ticket = ({ ticket }) => {
   };
 
   return (
-    <div className="bg-white shadow-sm rounded-lg p-4 flex flex-col gap-2 border hover:shadow-md transition">
+    <div onClick={() => handleProgress(ticket)} className="bg-white cursor-pointer shadow-sm rounded-lg p-4 flex flex-col gap-2 border hover:shadow-md transition">
       {/* Title + Status on right */}
       <div className="flex justify-between items-center">
         <h3 className="font-semibold text-gray-800">{title}</h3>

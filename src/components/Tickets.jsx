@@ -1,39 +1,22 @@
-// import React, { use } from 'react'
-// import Ticket from './Ticket';
 
-// const Tickets = ({playersPromise}) => {
-
-//   const tickets = use(playersPromise);
-//   console.log(tickets);
-
-//   return (
-//     <>
-//       {
-//         tickets.map(ticket =>
-//           <Ticket key={ticket.id}
-//                   ticket={ticket}>
-//           </Ticket>)
-//       }
-//     </>
-//   )
-// }
-
-// export default Tickets
 
 import React, { use } from "react";
 import Ticket from "./Ticket";
 
-const Tickets = ({ ticketPromise }) => {
+const Tickets = ({ ticketPromise, handleProgress, selectedTicket }) => {
   const tickets = use(ticketPromise);
 
+
+
+
   return (
-  <div className="max-w-6xl mx-auto p-6 grid grid-cols-12 gap-6">
+  <div className="max-w-6xl mx-auto  p-6 grid grid-cols-12 gap-6">
   {/* Left side (Customer Tickets) */}
     <div className="col-span-12 lg:col-span-9">
       <h2 className="text-lg font-semibold mb-4">Customer Tickets</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {tickets.map((ticket) => (
-          <Ticket key={ticket.id} ticket={ticket} />
+          <Ticket key={ticket.id} ticket={ticket} handleProgress={handleProgress} />
         ))}
       </div>
     </div>
@@ -41,11 +24,24 @@ const Tickets = ({ ticketPromise }) => {
   {/* Right side (Task Status + Resolved Task) */}
     <div className="col-span-12 lg:col-span-3">
       <h2 className="text-lg font-semibold mb-4">Task Status</h2>
-      <div className="bg-white rounded-lg shadow-sm p-4 border">
-        <p className="text-gray-500 text-sm mb-2">
-          Select a ticket to add to Task Status
-        </p>
-        <div className="text-gray-400 text-sm">No tasks yet.</div>
+      <div className="brounded-lg shadow-sm">
+       {selectedTicket.length === 0 ? (
+            <p className="text-gray-500 text-sm mb-2">
+              Select a ticket to add to Task Status
+            </p>
+          ) : (
+            <ul className="space-y-2">
+              {selectedTicket.map((t) => (
+                <li
+                  key={t.id}
+                  className="bg-white shadow-2xl p-4 border rounded justify-between items-center"
+                >
+                  <span className="text-black font-medium">{t.title}</span>
+                  <button className="w-full bg-green-700 rounded-md mt-2">Completed</button>
+                </li>
+              ))}
+            </ul>
+          )}
       </div>
 
       <h2 className="text-lg font-semibold mt-6 mb-4">Resolved Task</h2>
