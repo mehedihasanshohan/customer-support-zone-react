@@ -1,0 +1,56 @@
+[
+  {
+    "id": "#1105",
+    "title": "Password Reset Link Not Working",
+    "description": "User has attempted to use the password reset feature multiple times, but the link sent to their email is consistently expired or invalid.",
+    "priority": "HIGH PRIORITY",
+    "status": "In-Progress",
+    "customer": "Sarah Chen",
+    "date": "2/05/2024"
+  },
+  {
+    "id": "#1106",
+    "title": "Issue with API Authentication",
+    "description": "A developer reports that their API key is not authenticating correctly, receiving a 401 Unauthorized error despite the key being correct.",
+    "priority": "HIGH PRIORITY",
+    "status": "Open",
+    "customer": "Alex Rodriguez",
+    "date": "2/06/2024"
+  },
+  {
+    "id": "#1107",
+    "title": "Incorrect Product Description on Website",
+    "description": "Customer noticed that the product description for 'Product X' lists the wrong specifications and features.",
+    "priority": "LOW PRIORITY",
+    "status": "Open",
+    "customer": "Maria Gomez",
+    "date": "2/06/2024"
+  },
+  {
+    "id": "#1108",
+    "title": "Slow Page Load Times",
+    "description": "Multiple users have reported that the dashboard page is taking an unusually long time to load, often timing out on slower connections.",
+    "priority": "HIGH PRIORITY",
+    "status": "In-Progress",
+    "customer": "David Kim",
+    "date": "2/07/2024"
+  },
+  {
+    "id": "#1109",
+    "title": "Missing Order in History",
+    "description": "Customer confirms a successful payment but their order is not appearing in their purchase history on their account.",
+    "priority": "MEDIUM PRIORITY",
+    "status": "Open",
+    "customer": "Emily White",
+    "date": "2/07/2024"
+  },
+  {
+    "id": "#1110",
+    "title": "Billing Dispute - Double Charge",
+    "description": "Customer's credit card was charged twice for the same monthly subscription renewal. They need a refund for the extra charge.",
+    "priority": "HIGH PRIORITY",
+    "status": "Open",
+    "customer": "John Stevens",
+    "date": "2/08/2024"
+  }
+]
