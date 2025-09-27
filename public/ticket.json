@@ -6,7 +6,7 @@
     "priority": "HIGH PRIORITY",
     "status": "In-Progress",
     "customer": "Sarah Chen",
-    "date": "2/05/2024"
+    "createdAt": "2/05/2024"
   },
   {
     "id": "#1106",
@@ -15,7 +15,7 @@
     "priority": "HIGH PRIORITY",
     "status": "Open",
     "customer": "Alex Rodriguez",
-    "date": "2/06/2024"
+    "createdAt": "2/06/2024"
   },
   {
     "id": "#1107",
@@ -24,7 +24,7 @@
     "priority": "LOW PRIORITY",
     "status": "Open",
     "customer": "Maria Gomez",
-    "date": "2/06/2024"
+    "createdAt": "2/06/2024"
   },
   {
     "id": "#1108",
@@ -33,7 +33,7 @@
     "priority": "HIGH PRIORITY",
     "status": "In-Progress",
     "customer": "David Kim",
-    "date": "2/07/2024"
+    "createdAt": "2/07/2024"
   },
   {
     "id": "#1109",
@@ -42,7 +42,7 @@
     "priority": "MEDIUM PRIORITY",
     "status": "Open",
     "customer": "Emily White",
-    "date": "2/07/2024"
+    "createdAt": "2/07/2024"
   },
   {
     "id": "#1110",
@@ -51,6 +51,60 @@
     "priority": "HIGH PRIORITY",
     "status": "Open",
     "customer": "John Stevens",
-    "date": "2/08/2024"
+    "createdAt": "2/08/2024"
+  },
+  {
+    "id": "#1111",
+    "title": "Unable to Upload Profile Picture",
+    "description": "User reports that uploading a new profile picture results in an error message saying 'File type not supported'.",
+    "priority": "LOW PRIORITY",
+    "status": "Open",
+    "customer": "Linda Martinez",
+    "createdAt": "2/08/2024"
+  },
+  {
+    "id": "#1112",
+    "title": "Mobile App Crashes on Login",
+    "description": "Several users have reported that the iOS mobile app crashes immediately after entering login credentials.",
+    "priority": "HIGH PRIORITY",
+    "status": "In-Progress",
+    "customer": "Michael Brown",
+    "createdAt": "2/09/2024"
+  },
+  {
+    "id": "#1113",
+    "title": "Report Export Generates Empty File",
+    "description": "Customer trying to export a sales report receives an empty CSV file with no data inside.",
+    "priority": "MEDIUM PRIORITY",
+    "status": "Open",
+    "customer": "Sophia Turner",
+    "createdAt": "2/09/2024"
+  },
+  {
+    "id": "#1114",
+    "title": "Notifications Not Sent",
+    "description": "System notifications are not being delivered to users for order confirmations and account updates.",
+    "priority": "HIGH PRIORITY",
+    "status": "Open",
+    "customer": "Daniel Green",
+    "createdAt": "2/10/2024"
+  },
+  {
+    "id": "#1115",
+    "title": "Search Function Not Returning Results",
+    "description": "Search bar returns no results even when searching for existing products and customers.",
+    "priority": "MEDIUM PRIORITY",
+    "status": "In-Progress",
+    "customer": "Olivia Wilson",
+    "createdAt": "2/10/2024"
+  },
+  {
+    "id": "#1116",
+    "title": "Account Locked After Failed Attempts",
+    "description": "Customer got locked out of their account after three failed login attempts and is unable to unlock it.",
+    "priority": "HIGH PRIORITY",
+    "status": "Open",
+    "customer": "Chris Evans",
+    "createdAt": "2/11/2024"
   }
 ]

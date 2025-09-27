@@ -5,24 +5,24 @@
 - It is used in **React** to describe what the UI should look like.
 - JSX allows us to write HTML-like code directly inside JavaScript, making it easier to create and manage components.
 
-✅ Example:
+ Example:
 ```jsx
 const element = <h1>Hello, React!</h1>;
 
 
-# 🔄 Difference Between State and Props in React
+#  Difference Between State and Props in React
 
 In React, **State** and **Props** are two important concepts used for handling data in components. While they may seem similar, they serve different purposes.
 
 ---
 
-## 📌 State
+##  State
 - **Definition:** An object that holds data or information about the component.
 - **Managed by:** The component itself (internal).
 - **Mutable:** Can be updated using the `setState` function (class components) or `useState` hook (functional components).
 - **Usage:** Used for data that changes over time (e.g., form inputs, counters, toggles).
 
-✅ Example:
+Example:
 ```jsx
 import React, { useState } from "react";
 
@@ -39,23 +39,23 @@ function Counter() {
 
 
 
-# 📦 Props in React
+#  Props in React
 
-## 🔹 What are Props?
+##  What are Props?
 - **Props** (short for *properties*) are used to pass data from a **parent component** to a **child component** in React.
 - They make components **reusable** by allowing dynamic data to be passed into them.
 - Props are **read-only** (immutable) – a child component cannot modify the props it receives.
 
 ---
 
-## 🔹 Why use Props?
+##  Why use Props?
 1. To share data between components.
 2. To make components reusable with different data.
 3. To keep components flexible and dynamic.
 
 ---
 
-## 🔹 Example: Passing Props
+## Example: Passing Props
 ```jsx
 function Greeting({ name }) {
   return <h2>Hello, {name}!</h2>;
@@ -73,16 +73,16 @@ function App() {
 
 
 
-# ⚡ useState Hook in React
+#  useState Hook in React
 
-## 🔹 What is useState?
+##  What is useState?
 - `useState` is a **React Hook** that lets you add **state** to functional components.
 - It allows you to store values that can change over time (e.g., user input, counters, toggles).
 - Introduced in **React 16.8**, it replaced the need for class components to manage state.
 
 ---
 
-## 🔹 How does useState work?
+##  How does useState work?
 - `useState` returns an **array with two elements**:
   1. The **current state value**.
   2. A **function to update the state**.

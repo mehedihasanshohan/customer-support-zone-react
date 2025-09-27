@@ -2,7 +2,7 @@ import React from "react";
 import { LuCalendarDays } from 'react-icons/lu';
 
 const Ticket = ({ ticket, handleProgress }) => {
-  const { id, title, description, priority, status, customer, date } = ticket;
+  const { id, title, description, priority, status, customer, createdAt } = ticket;
 
   // Priority color mapping
   const priorityColors = {
@@ -51,7 +51,7 @@ const Ticket = ({ ticket, handleProgress }) => {
           <span className="text-gray-500">{customer}</span>
           <div className="flex gap-2 justify-center items-center">
             <LuCalendarDays className="text-gray-800 "></LuCalendarDays>
-            <span className="text-gray-400"> {date}</span>
+            <span className="text-gray-400"> {createdAt}</span>
           </div>
         </div>
       </div>
