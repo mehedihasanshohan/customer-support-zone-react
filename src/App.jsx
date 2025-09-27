@@ -14,14 +14,32 @@ function App() {
 
 
   const handleProgress = (ticket) => {
-    setInProgressCount(inProgressCount + 1);
-     if(!selectedTicket.find(t => t.id === ticket.id)) {
-      setSelectedTicket([...selectedTicket, ticket]);
+    // setInProgressCount(inProgressCount + 1);
+    //  if(!selectedTicket.find(t => t.id === ticket.id)) {
+    //   setSelectedTicket([...selectedTicket, ticket]);
+    // }
+    const isAlreadyAdded = selectedTicket.find(t => t.id === ticket.id);
+
+    if (isAlreadyAdded) {
+     alert("This ticket is already added!");
+    return; // Exit the function without adding
     }
+
+    // Add ticket if not already added
+    setInProgressCount(inProgressCount + 1);
+    setSelectedTicket([...selectedTicket, ticket]);
   }
 
   const handleResolved = () => {
     setResolvedCount(resolvedCount + 1);
+  }
+
+  const completeTask = () => {
+    if(selectedTicket.length > 0) {
+      setSelectedTicket(selectedTicket.slice(1));
+      handleResolved();
+      setInProgressCount(inProgressCount - 1);
+    }
   }
 
   const ticketPromise =  fetch('/ticket.json')
@@ -41,6 +59,7 @@ function App() {
         <Tickets handleProgress={handleProgress}
                  ticketPromise={ticketPromise}
                  selectedTicket={selectedTicket}
+                 completeTask={completeTask}
         ></Tickets>
       </Suspense>
 
