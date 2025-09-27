@@ -19,7 +19,7 @@ const Ticket = ({ ticket, handleProgress }) => {
   };
 
   return (
-    <div onClick={() => handleProgress(ticket)} className="bg-white cursor-pointer shadow-sm rounded-lg p-4 flex flex-col gap-2 border hover:shadow-md transition">
+    <div onClick={(event) => handleProgress(event, ticket)} className="bg-white cursor-pointer shadow-sm rounded-lg p-4 flex flex-col gap-2 border hover:shadow-md transition">
       {/* Title + Status on right */}
       <div className="flex justify-between items-center">
         <h3 className="font-semibold text-gray-800">{title}</h3>

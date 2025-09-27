@@ -1,4 +1,4 @@
-import { Suspense, useState } from 'react'
+import { Suspense, useState} from 'react'
 import './App.css'
 import Banner from './components/Banner'
 import Navbar from './components/Navbar'
@@ -11,10 +11,12 @@ function App() {
   const [inProgressCount, setInProgressCount] = useState(0);
   const [resolvedCount, setResolvedCount] = useState(0);
   const [selectedTicket, setSelectedTicket] = useState([]);
+  const [resolvedTasks, setResolvedTasks] = useState([]);
 
 
 
-  const handleProgress = (ticket) => {
+  const handleProgress = (event, ticket) => {
+    event.preventDefault();
     const isAlreadyAdded = selectedTicket.find(t => t.id === ticket.id);
     if (isAlreadyAdded) {
      toast("This ticket is already added!");
@@ -27,17 +29,23 @@ function App() {
     toast.success("Ticket added to Task Status");
   }
 
+  // const handleResolvedTasks = (ticket) => {
+  //   setResolvedTasks([...resolvedTasks, ticket]);
+  // }
+
   const handleResolved = () => {
     setResolvedCount(resolvedCount + 1);
   }
 
-  const completeTask = () => {
+  const completeTask = (ticket) => {
     if(selectedTicket.length > 0) {
       setSelectedTicket(selectedTicket.slice(1));
       handleResolved();
       setInProgressCount(inProgressCount - 1);
       toast.success("Task marked as completed");
     }
+    setResolvedTasks([...resolvedTasks, ticket]);
+
   }
 
   const ticketPromise =  fetch('/ticket.json')
@@ -58,6 +66,7 @@ function App() {
                  ticketPromise={ticketPromise}
                  selectedTicket={selectedTicket}
                  completeTask={completeTask}
+                 resolvedTasks={resolvedTasks}
         ></Tickets>
       </Suspense>
 

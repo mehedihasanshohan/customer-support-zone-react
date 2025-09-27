@@ -3,7 +3,7 @@
 import React, { use } from "react";
 import Ticket from "./Ticket";
 
-const Tickets = ({ ticketPromise, handleProgress, selectedTicket, completeTask }) => {
+const Tickets = ({ ticketPromise, handleProgress, selectedTicket, completeTask,  resolvedTasks }) => {
   const tickets = use(ticketPromise);
 
 
@@ -37,7 +37,7 @@ const Tickets = ({ ticketPromise, handleProgress, selectedTicket, completeTask }
                   className="bg-white shadow-2xs p-4 border rounded justify-between items-center"
                 >
                   <span className="text-black">{t.title}</span>
-                  <button onClick={() => completeTask()} className="w-full bg-green-700 cursor-pointer rounded-md mt-2">Completed</button>
+                  <button onClick={() => completeTask(t)} className="w-full bg-green-700 cursor-pointer rounded-md mt-2">Completed</button>
                 </li>
               ))}
             </ul>
@@ -45,8 +45,23 @@ const Tickets = ({ ticketPromise, handleProgress, selectedTicket, completeTask }
       </div>
 
       <h2 className="text-lg font-semibold mt-6 mb-4 text-black">Resolved Task</h2>
-      <div className="bg-white rounded-lg shadow-sm p-4 border">
-        <p className="text-gray-400 text-sm">No resolved tasks yet.</p>
+      <div className="">
+        {resolvedTasks.length === 0 ? (
+            <p className="text-[#627382]  mb-2">
+              Complete a ticket to resolved to Task Status
+            </p>
+          ) : (
+            <ul className="space-y-2 h-64 overflow-y-auto pr-2">
+              {resolvedTasks.map((t) => (
+                <li
+                  key={t.id}
+                  className="bg-[#E0E7FF] shadow-2xs p-4 border rounded justify-between items-center"
+                >
+                  <span className="text-black">{t.title}</span>
+                </li>
+              ))}
+            </ul>
+          )}
       </div>
     </div>
   </div>
