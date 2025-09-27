@@ -4,6 +4,7 @@ import Banner from './components/Banner'
 import Navbar from './components/Navbar'
 import Tickets from './components/Tickets'
 import Footer from './components/Footer'
+import { toast, ToastContainer } from 'react-toastify'
 
 function App() {
 
@@ -14,20 +15,16 @@ function App() {
 
 
   const handleProgress = (ticket) => {
-    // setInProgressCount(inProgressCount + 1);
-    //  if(!selectedTicket.find(t => t.id === ticket.id)) {
-    //   setSelectedTicket([...selectedTicket, ticket]);
-    // }
     const isAlreadyAdded = selectedTicket.find(t => t.id === ticket.id);
-
     if (isAlreadyAdded) {
-     alert("This ticket is already added!");
-    return; // Exit the function without adding
+     toast("This ticket is already added!");
+    return;
     }
-
     // Add ticket if not already added
     setInProgressCount(inProgressCount + 1);
     setSelectedTicket([...selectedTicket, ticket]);
+
+    toast.success("Ticket added to Task Status");
   }
 
   const handleResolved = () => {
@@ -39,6 +36,7 @@ function App() {
       setSelectedTicket(selectedTicket.slice(1));
       handleResolved();
       setInProgressCount(inProgressCount - 1);
+      toast.success("Task marked as completed");
     }
   }
 
@@ -64,6 +62,7 @@ function App() {
       </Suspense>
 
       <Footer></Footer>
+      <ToastContainer />
     </div>
   )
 }
