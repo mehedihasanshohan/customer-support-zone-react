@@ -4,7 +4,7 @@
     "title": "Password Reset Link Not Working",
     "description": "User has attempted to use the password reset feature multiple times, but the link sent to their email is consistently expired or invalid.",
     "priority": "HIGH PRIORITY",
-    "status": "In-Progress",
+    "status": "Open",
     "customer": "Sarah Chen",
     "createdAt": "2/05/2024"
   },
@@ -31,7 +31,7 @@
     "title": "Slow Page Load Times",
     "description": "Multiple users have reported that the dashboard page is taking an unusually long time to load, often timing out on slower connections.",
     "priority": "HIGH PRIORITY",
-    "status": "In-Progress",
+    "status": "Open",
     "customer": "David Kim",
     "createdAt": "2/07/2024"
   },
@@ -67,7 +67,7 @@
     "title": "Mobile App Crashes on Login",
     "description": "Several users have reported that the iOS mobile app crashes immediately after entering login credentials.",
     "priority": "HIGH PRIORITY",
-    "status": "In-Progress",
+    "status": "Open",
     "customer": "Michael Brown",
     "createdAt": "2/09/2024"
   },
@@ -94,7 +94,7 @@
     "title": "Search Function Not Returning Results",
     "description": "Search bar returns no results even when searching for existing products and customers.",
     "priority": "MEDIUM PRIORITY",
-    "status": "In-Progress",
+    "status": "Open",
     "customer": "Olivia Wilson",
     "createdAt": "2/10/2024"
   },

@@ -10,14 +10,13 @@ import { toast, ToastContainer } from 'react-toastify'
 const ticketPromise =  fetch('/ticket.json')
     .then(res => res.json())
     .catch(err => console.log(err))
-    
+
 function App() {
 
   const [inProgressCount, setInProgressCount] = useState(0);
   const [resolvedCount, setResolvedCount] = useState(0);
   const [selectedTicket, setSelectedTicket] = useState([]);
   const [resolvedTasks, setResolvedTasks] = useState([]);
-
 
 
   const handleProgress = (event, ticket) => {
@@ -27,28 +26,35 @@ function App() {
      toast("This ticket is already added!");
     return;
     }
-    // Add ticket if not already added
+
+    const updatedTicket = { ...ticket, status: "In-Progress" };
+    setSelectedTicket([...selectedTicket, updatedTicket]);
     setInProgressCount(inProgressCount + 1);
-    setSelectedTicket([...selectedTicket, ticket]);
 
     toast.success("Ticket added to Task Status");
   }
+
+
 
 
   const handleResolved = () => {
     setResolvedCount(resolvedCount + 1);
   }
 
-  const completeTask = (ticket) => {
-    if(selectedTicket.length > 0) {
-      setSelectedTicket(selectedTicket.slice(1));
-      handleResolved();
-      setInProgressCount(inProgressCount - 1);
-      toast.success("Task marked as completed");
-    }
-    setResolvedTasks([...resolvedTasks, ticket]);
 
-  }
+  const completeTask = (ticket) => {
+  // Remove from in-progress
+  setSelectedTicket(selectedTicket.filter(t => t.id !== ticket.id));
+
+  const updatedTicket = { ...ticket, status: "resolved" };
+  setResolvedTasks([...resolvedTasks, updatedTicket]);
+
+  setInProgressCount(inProgressCount - 1);
+  setResolvedCount(resolvedCount + 1);
+
+  toast.success("Task marked as completed");
+};
+
 
 
 

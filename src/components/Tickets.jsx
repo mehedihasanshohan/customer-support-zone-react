@@ -15,9 +15,12 @@ const Tickets = ({ ticketPromise, handleProgress, selectedTicket, completeTask, 
     <div className="col-span-12 lg:col-span-9">
       <h2 className="text-lg text-[#34485A] font-semibold mb-4 px-4 sm:px-6 lg:px-0">Customer Tickets</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 sm:px-6 lg:px-0">
-        {tickets.map((ticket) => (
-          <Ticket key={ticket.id} ticket={ticket} handleProgress={handleProgress} />
-        ))}
+        {tickets.map(ticket => {
+        // If this ticket is in-progress, override status
+        const updatedTicket = selectedTicket.find(t => t.id === ticket.id) || ticket;
+        return <Ticket key={ticket.id} ticket={updatedTicket} handleProgress={handleProgress} />;
+        })}
+
       </div>
     </div>
 
