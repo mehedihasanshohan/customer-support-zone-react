@@ -6,6 +6,11 @@ import Tickets from './components/Tickets'
 import Footer from './components/Footer'
 import { toast, ToastContainer } from 'react-toastify'
 
+
+const ticketPromise =  fetch('/ticket.json')
+    .then(res => res.json())
+    .catch(err => console.log(err))
+    
 function App() {
 
   const [inProgressCount, setInProgressCount] = useState(0);
@@ -29,9 +34,6 @@ function App() {
     toast.success("Ticket added to Task Status");
   }
 
-  // const handleResolvedTasks = (ticket) => {
-  //   setResolvedTasks([...resolvedTasks, ticket]);
-  // }
 
   const handleResolved = () => {
     setResolvedCount(resolvedCount + 1);
@@ -48,9 +50,7 @@ function App() {
 
   }
 
-  const ticketPromise =  fetch('/ticket.json')
-    .then(res => res.json())
-    .catch(err => console.log(err))
+
 
   return (
     <div className=''>
