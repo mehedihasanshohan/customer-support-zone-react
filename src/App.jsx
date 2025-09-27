@@ -1,8 +1,9 @@
 import { Suspense, useState } from 'react'
 import './App.css'
 import Banner from './components/Banner'
-// import Navbar from './components/Navbar'
+import Navbar from './components/Navbar'
 import Tickets from './components/Tickets'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
 
   return (
     <div className=''>
-      {/* <Navbar /> */}
+      <Navbar />
       <Banner inProgressCount={inProgressCount}
               resolvedCount={resolvedCount}
               handleProgress={handleProgress}
@@ -42,6 +43,8 @@ function App() {
                  selectedTicket={selectedTicket}
         ></Tickets>
       </Suspense>
+
+      <Footer></Footer>
     </div>
   )
 }
